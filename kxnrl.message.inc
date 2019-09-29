@@ -28,6 +28,8 @@ enum Message_Type
     Server_Query        = 106,
     Server_PushError    = 107,
     Server_PushLog      = 108,
+    Server_PushGithub   = 109,
+    Server_PushChatLog  = 110,
 
     // Forums
     Forums_LoadUser     = 201,
@@ -40,6 +42,7 @@ enum Message_Type
     Broadcast_Wedding   = 304,
     Broadcast_Other     = 305,
     Broadcast_NextMap   = 306,
+    Broadcast_Horn      = 307,
 
     // Baning
     Ban_LoadAdmins      = 401,
@@ -69,6 +72,31 @@ enum Message_Type
     // User options
     Opts_LoadUser       = 701,
     Opts_SaveUser       = 702,
+
+    /* Store */
+    // Load
+    Store_Load          = 900,
+    Store_LoadUser      = 901,
+
+    // Credits
+    Store_EarnCredits   = 911,
+    Store_CostCredits   = 912,
+    Store_SetsCredits   = 913,
+
+    // Items
+    Store_PurchaseItem  = 921,
+    Store_SellItem      = 922,
+    Store_GiveItem      = 923,
+    Store_GiftItem      = 924,
+    Store_ExtendItem    = 925,
+    Store_RemoveItem    = 926,
+    
+    // Equipments
+    Store_EquipItem     = 931,
+    Store_UnequipItem   = 932,
+
+    // Extends
+    Store_ExtraLog      = 941,
 
     /* Analytics */
     

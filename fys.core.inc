@@ -4,11 +4,13 @@
 
 #define _fys_Core_Include_
 
-#define PI_VERSION "1.2.1"
+#define PI_VERSION "1.2.5"
 
 #define foreachAction(%1, %2, %3) for (int %1 = %2; %1 <= %3; %1++)
 #define foreachClient(%1) for (int %1 = 1; %1 <= MaxClients; %1++) if (IsClientInGame(%1))
 #define foreachPlayer(%1) for (int %1 = 1; %1 <= MaxClients; %1++) if (IsClientInGame(%1) && !IsFakeClient(%1))
+
+#define INVALID_PLAYER -1
 
 methodmap Player __nullable__
 {
