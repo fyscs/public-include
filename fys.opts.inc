@@ -5,6 +5,7 @@
 #define _fys_Opts_Include_
 
 forward void Opts_OnClientLoad(int client);
+forward void Opts_OnClientXSet(int client, const char[] key);
 
 native void  Opts_GetOptString(int client, const char[] key, char[] val, int maxLen, const char[] defVal = "null");
 native int   Opts_GetOptInteger(int client, const char[] key, const int defVal = 0);
