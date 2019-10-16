@@ -16,3 +16,10 @@ public SharedPlugin __pl_fys_Exts_AntiCheat =
     required = 0
 #endif
 };
+
+#if !defined REQUIRE_PLUGIN
+public __ext_fys_Exts_AntiCheat_SetNTVOptional()
+{
+	MarkNativeAsOptional("Exts_AC_SetIgnoreClient");
+}
+#endif

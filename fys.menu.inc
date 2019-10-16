@@ -13,7 +13,7 @@ forward void Menu_OnUsersMenuReady(Handle usersMenu);
 #define ADMIN_PLAYERCOMMAND "PlayerCommands" //"m_Player"
 #define ADMIN_SERVERCOMMAND "ServerCommands" //"m_Server"
 #define ADMIN_PLUGINCOMMAND "PluginCommands" //"m_Plugin"
-#define ADMIN_CONFIGCOMMAND "ComfigCommands" //"m_Config"
+#define ADMIN_CONFIGCOMMAND "ConfigCommands" //"m_Config"
 #define ADMIN_VOTINGCOMMAND "VotingCommands" //"m_Voting"
 #define ADMIN_ADMINSCOMMAND "AdminsCommands" //"m_Admins"
 
@@ -27,3 +27,11 @@ public SharedPlugin __pl_fys_Menu =
     required = 0
 #endif
 };
+
+#if !defined REQUIRE_PLUGIN
+public __ext_fys_Menu_SetNTVOptional()
+{
+	MarkNativeAsOptional("Menu_GetAdminMenu");
+    MarkNativeAsOptional("Menu_GetUsersMenu");
+}
+#endif

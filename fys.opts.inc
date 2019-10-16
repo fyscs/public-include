@@ -7,6 +7,8 @@
 forward void Opts_OnClientLoad(int client);
 forward void Opts_OnClientXSet(int client, const char[] key);
 
+native bool  Opts_IsClientLoaded(int client);
+
 native void  Opts_GetOptString(int client, const char[] key, char[] val, int maxLen, const char[] defVal = "null");
 native int   Opts_GetOptInteger(int client, const char[] key, const int defVal = 0);
 native bool  Opts_GetOptBool(int client, const char[] key, const bool defVal = false);
@@ -72,3 +74,20 @@ public SharedPlugin __pl_fys_Opts =
     required = 0
 #endif
 };
+
+#if !defined REQUIRE_PLUGIN
+public __ext_fys_Opts_SetNTVOptional()
+{
+    MarkNativeAsOptional("Opts_IsClientLoaded");
+
+	MarkNativeAsOptional("Opts_GetOptString");
+    MarkNativeAsOptional("Opts_GetOptInteger");
+    MarkNativeAsOptional("Opts_GetOptBool");
+    MarkNativeAsOptional("Opts_GetOptFloat");
+
+    MarkNativeAsOptional("Opts_SetOptString");
+    MarkNativeAsOptional("Opts_SetOptInteger");
+    MarkNativeAsOptional("Opts_SetOptBool");
+    MarkNativeAsOptional("Opts_SetOptFloat");
+}
+#endif

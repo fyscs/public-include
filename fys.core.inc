@@ -4,7 +4,7 @@
 
 #define _fys_Core_Include_
 
-#define PI_VERSION "1.2.5"
+#define PI_VERSION "1.2.6" ... "." ... "<build>"
 
 #define foreachAction(%1, %2, %3) for (int %1 = %2; %1 <= %3; %1++)
 #define foreachClient(%1) for (int %1 = 1; %1 <= MaxClients; %1++) if (IsClientInGame(%1))
@@ -104,3 +104,30 @@ public SharedPlugin __pl_fys_Core =
     required = 0
 #endif
 };
+
+#if !defined REQUIRE_PLUGIN
+public __ext_fys_Core_SetNTVOptional()
+{
+	MarkNativeAsOptional("Core_GetServerId");
+	MarkNativeAsOptional("Core_GetSrvModId");
+	MarkNativeAsOptional("Core_GameModName");
+	MarkNativeAsOptional("Core_GameTagName");
+	MarkNativeAsOptional("Core_PushError");
+	MarkNativeAsOptional("Core_PushLog");
+	MarkNativeAsOptional("Core_FindByPId");
+
+    MarkNativeAsOptional("Player.Player");
+    MarkNativeAsOptional("Player.PId");
+    MarkNativeAsOptional("Player.FirstJoin");
+    MarkNativeAsOptional("Player.LastSeen");
+    MarkNativeAsOptional("Player.Connections");
+    MarkNativeAsOptional("Player.Onlines");
+    MarkNativeAsOptional("Player.OnlineToday");
+    MarkNativeAsOptional("Player.SignTimes");
+    MarkNativeAsOptional("Player.SignDate");
+    MarkNativeAsOptional("Player.SignKeep");
+    MarkNativeAsOptional("Player.PlayTotal");
+    MarkNativeAsOptional("Player.SpecTotal");
+    MarkNativeAsOptional("Player.AliveTime");
+}
+#endif

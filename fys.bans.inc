@@ -31,3 +31,17 @@ public SharedPlugin __pl_fys_Bans =
     required = 0
 #endif
 };
+
+#if !defined REQUIRE_PLUGIN
+public __ext_fys_Bans_SetNTVOptional()
+{
+	MarkNativeAsOptional("Admin_IsAuthAdmin");
+	MarkNativeAsOptional("Admin_IsClientAdmin");
+	MarkNativeAsOptional("Admin_GetAdminId");
+	MarkNativeAsOptional("Admin_GetAdminName");
+	MarkNativeAsOptional("Admin_LogAction");
+
+	MarkNativeAsOptional("Bans_BanClient");
+	MarkNativeAsOptional("Bans_BanIdentity");
+}
+#endif
