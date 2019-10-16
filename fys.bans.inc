@@ -33,7 +33,7 @@ public SharedPlugin __pl_fys_Bans =
 };
 
 #if !defined REQUIRE_PLUGIN
-public __ext_fys_Bans_SetNTVOptional()
+public void __ext_fys_Bans_SetNTVOptional()
 {
 	MarkNativeAsOptional("Admin_IsAuthAdmin");
 	MarkNativeAsOptional("Admin_IsClientAdmin");

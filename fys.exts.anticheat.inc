@@ -18,8 +18,8 @@ public SharedPlugin __pl_fys_Exts_AntiCheat =
 };
 
 #if !defined REQUIRE_PLUGIN
-public __ext_fys_Exts_AntiCheat_SetNTVOptional()
+public void __ext_fys_Exts_AntiCheat_SetNTVOptional()
 {
-	MarkNativeAsOptional("Exts_AC_SetIgnoreClient");
+    MarkNativeAsOptional("Exts_AC_SetIgnoreClient");
 }
 #endif

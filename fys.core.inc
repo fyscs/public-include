@@ -106,15 +106,15 @@ public SharedPlugin __pl_fys_Core =
 };
 
 #if !defined REQUIRE_PLUGIN
-public __ext_fys_Core_SetNTVOptional()
+public void __ext_fys_Core_SetNTVOptional()
 {
-	MarkNativeAsOptional("Core_GetServerId");
-	MarkNativeAsOptional("Core_GetSrvModId");
-	MarkNativeAsOptional("Core_GameModName");
-	MarkNativeAsOptional("Core_GameTagName");
-	MarkNativeAsOptional("Core_PushError");
-	MarkNativeAsOptional("Core_PushLog");
-	MarkNativeAsOptional("Core_FindByPId");
+    MarkNativeAsOptional("Core_GetServerId");
+    MarkNativeAsOptional("Core_GetSrvModId");
+    MarkNativeAsOptional("Core_GameModName");
+    MarkNativeAsOptional("Core_GameTagName");
+    MarkNativeAsOptional("Core_PushError");
+    MarkNativeAsOptional("Core_PushLog");
+    MarkNativeAsOptional("Core_FindByPId");
 
     MarkNativeAsOptional("Player.Player");
     MarkNativeAsOptional("Player.PId");

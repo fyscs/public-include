@@ -28,9 +28,9 @@ public SharedPlugin __pl_fys_Exts_SpeedMod =
 };
 
 #if !defined REQUIRE_PLUGIN
-public __ext_fys_Exts_SpeedMod_SetNTVOptional()
+public void __ext_fys_Exts_SpeedMod_SetNTVOptional()
 {
-	MarkNativeAsOptional("Exts_SM_SetSpeed");
+    MarkNativeAsOptional("Exts_SM_SetSpeed");
     MarkNativeAsOptional("Exts_SM_SetXJump");
 }
 #endif

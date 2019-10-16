@@ -76,11 +76,11 @@ public SharedPlugin __pl_fys_Opts =
 };
 
 #if !defined REQUIRE_PLUGIN
-public __ext_fys_Opts_SetNTVOptional()
+public void __ext_fys_Opts_SetNTVOptional()
 {
     MarkNativeAsOptional("Opts_IsClientLoaded");
 
-	MarkNativeAsOptional("Opts_GetOptString");
+    MarkNativeAsOptional("Opts_GetOptString");
     MarkNativeAsOptional("Opts_GetOptInteger");
     MarkNativeAsOptional("Opts_GetOptBool");
     MarkNativeAsOptional("Opts_GetOptFloat");
