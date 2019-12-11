@@ -4,13 +4,16 @@
 
 #define _fys_Core_Include_
 
-#define PI_VERSION "1.3.0" ... "." ... "<build>"
+#define PI_VERSION "1.3.2" ... "." ... "<build>"
 
 #define foreachAction(%1, %2, %3) for (int %1 = %2; %1 <= %3; %1++)
 #define foreachClient(%1) for (int %1 = 1; %1 <= MaxClients; %1++) if (IsClientInGame(%1))
 #define foreachPlayer(%1) for (int %1 = 1; %1 <= MaxClients; %1++) if (IsClientInGame(%1) && !IsFakeClient(%1))
 
-#define INVALID_PLAYER -1
+enum Player
+{
+    INVALID_PLAYER = -1
+}
 
 methodmap Player __nullable__
 {
@@ -19,8 +22,6 @@ methodmap Player __nullable__
             return view_as<int>(this);
         }
     }
-
-    public static Player FromPId(int pid) { return Core_FindByPId(pid); }
 
     public native Player(int client);
 
@@ -93,7 +94,6 @@ forward void Core_OnClientSign(Player player);
 forward void Core_OnClientLoad(Player player);
 forward void Core_OnAnotherDay(int today);
 
-
 public SharedPlugin __pl_fys_Core =
 {
 	name = "fys-Core",
@@ -117,17 +117,17 @@ public void __ext_fys_Core_SetNTVOptional()
     MarkNativeAsOptional("Core_FindByPId");
 
     MarkNativeAsOptional("Player.Player");
-    MarkNativeAsOptional("Player.PId");
-    MarkNativeAsOptional("Player.FirstJoin");
-    MarkNativeAsOptional("Player.LastSeen");
-    MarkNativeAsOptional("Player.Connections");
-    MarkNativeAsOptional("Player.Onlines");
-    MarkNativeAsOptional("Player.OnlineToday");
-    MarkNativeAsOptional("Player.SignTimes");
-    MarkNativeAsOptional("Player.SignDate");
-    MarkNativeAsOptional("Player.SignKeep");
-    MarkNativeAsOptional("Player.PlayTotal");
-    MarkNativeAsOptional("Player.SpecTotal");
-    MarkNativeAsOptional("Player.AliveTime");
+    MarkNativeAsOptional("Player.PId.get");
+    MarkNativeAsOptional("Player.FirstJoin.get");
+    MarkNativeAsOptional("Player.LastSeen.get");
+    MarkNativeAsOptional("Player.Connections.get");
+    MarkNativeAsOptional("Player.Onlines.get");
+    MarkNativeAsOptional("Player.OnlineToday.get");
+    MarkNativeAsOptional("Player.SignTimes.get");
+    MarkNativeAsOptional("Player.SignDate.get");
+    MarkNativeAsOptional("Player.SignKeep.get");
+    MarkNativeAsOptional("Player.PlayTotal.get");
+    MarkNativeAsOptional("Player.SpecTotal.get");
+    MarkNativeAsOptional("Player.AliveTime.get");
 }
 #endif

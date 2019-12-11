@@ -68,6 +68,7 @@ enum Message_Type
     Vip_LoadUser        = 601,
     Vip_LoadAll         = 602,
     Vip_FromClient      = 603,
+    Vip_Purchase        = 604,
 
     // User options
     Opts_LoadUser       = 701,
@@ -102,7 +103,7 @@ enum Message_Type
     
     // Global
     Stats_LoadUser      = 1001,
-    Stats_Analytics     = 1002,
+    Stats_Analytics     = 1002, // deprecated
     Stats_Update        = 1003,
     Stats_DailySignIn   = 1004,
 

@@ -25,17 +25,79 @@ native int  Rank_ZE_Get_NFire(int client);
 native int  Rank_ZE_Get_NPush(int client);
 native int  Rank_ZE_Get_NHole(int client);
 
-stock char[] DamageText(int value)
+forward void Rank_ZE_OnClientLoad(int client);
+
+stock char[] StringPadLeft(int value, int len = 0, const char[] padleft = "  ")
 {
-    char buffer[8];
+    char buffer[16];
+    FormatEx(buffer, 16, "%d", value);
+
+    if (len > 0)
+    {
+        int csl = len - strlen(buffer);
+
+        for(int i = 0; i < csl; i++)
+        {
+            Format(buffer, 16, "%s%s", padleft, buffer);
+        }
+    }
+
+    return buffer;
+}
+
+stock char[] DamageText(int value, int len = 0, const char[] padleft = "  ")
+{
+    char buffer[16];
     if (value >= 1024000000)
-        FormatEx(buffer, 8, "%4.1fG", float(value) / 1024000000);
+        //FormatEx(buffer, 16, "%4.1fG", float(value) / 1024000000);
+        FormatEx(buffer, 16, "%dG", value / 1024000000);
     else if (value >= 1024000)
-        FormatEx(buffer, 8, "%4.1fM", float(value) / 1024000);
+        //FormatEx(buffer, 16, "%4.1fM", float(value) / 1024000);
+        FormatEx(buffer, 16, "%dM", value / 1024000);
     else if (value >= 1024)
-        FormatEx(buffer, 8, "%4.1fK", float(value) / 1024);
+        //FormatEx(buffer, 16, "%4.1fK", float(value) / 1024);
+        FormatEx(buffer, 16, "%dK", value / 1024);
     else
-        FormatEx(buffer, 8, "%4d", value);
+        FormatEx(buffer, 16, "%d", value);
+
+    if (len > 0)
+    {
+        int csl = strlen(buffer);
+
+        for(int i = 0; i < len - csl; i++)
+        {
+            Format(buffer, 16, "%s%s", padleft, buffer);
+        }
+    }
+
+    //if (FindCharInString(buffer, '.', false) > -1)
+    //{
+    //    StrCat(buffer, 16, ".");
+    //}
+
+    return buffer;
+}
+
+stock char[] FormatDamage(int value, int len, const char[] padleft = "  ")
+{
+    char buffer[16];
+
+    if (len <= 0)
+        return buffer;
+
+    if (value >= 100000000)
+        FormatEx(buffer, 16, "%dM", value / 1024000);
+    else if (value >= 100000)
+        FormatEx(buffer, 16, "%dK", value / 1024);
+    else
+        FormatEx(buffer, 16, "%d", value);
+
+    int csl = len - strlen(buffer);
+
+    for(int i = 0; i < csl; i++)
+    {
+        Format(buffer, 16, "%s%s", padleft, buffer);
+    }
 
     return buffer;
 }
