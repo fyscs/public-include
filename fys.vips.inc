@@ -83,7 +83,7 @@ stock char[] VIPRemaningToString(int time)
     return buffer;
 }
 
-public SharedPlugin __pl_VIP_Core =
+public SharedPlugin __pl_VIPS_Core =
 {
     name = "fys-VIPS",
     file = "fys.vips.smx",
@@ -93,3 +93,12 @@ public SharedPlugin __pl_VIP_Core =
     required = 0
 #endif
 };
+
+
+#if !defined REQUIRE_PLUGIN
+public void __ext_fys_VIPS_SetNTVOptional()
+{
+    MarkNativeAsOptional("VIPS_GetClientVIP");
+    MarkNativeAsOptional("VIPS_GetAuthIdVIP");
+}
+#endif

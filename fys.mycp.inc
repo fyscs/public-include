@@ -10,6 +10,7 @@
 
 native int  CP_GetPartner(int client);
 
+native int  CP_GetCPID(int client);
 native int  CP_GetDate(int client);
 native int  CP_GetPlay(int client);
 native int  CP_GetLvls(int client);
@@ -55,9 +56,13 @@ public SharedPlugin __pl_fys_Couples =
 public void __ext_fys_Couples_SetNTVOptional()
 {
     MarkNativeAsOptional("CP_GetPartner");
-    MarkNativeAsOptional("CP_GetWedding");
-    MarkNativeAsOptional("CP_GetTogether");
-    MarkNativeAsOptional("CP_GetCPLevel");
-    MarkNativeAsOptional("CP_AddCPLevel");
+
+    MarkNativeAsOptional("CP_GetCPID");
+    MarkNativeAsOptional("CP_GetDate");
+    MarkNativeAsOptional("CP_GetPlay");
+    MarkNativeAsOptional("CP_GetLvls");
+    MarkNativeAsOptional("CP_AddLvls");
+    MarkNativeAsOptional("CP_GetName");
+    MarkNativeAsOptional("CP_IsWaifu");
 }
 #endif
