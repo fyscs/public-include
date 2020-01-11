@@ -23,7 +23,7 @@ public SharedPlugin __pl_fys_Client =
 };
 
 #if !defined REQUIRE_PLUGIN
-public void __ext_fys_Client_SetNTVOptional()
+public void __pl_fys_Client_SetNTVOptional()
 {
     MarkNativeAsOptional("Clis_GetLastActive");
     MarkNativeAsOptional("Clis_GetStartTime");

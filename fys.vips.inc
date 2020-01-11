@@ -96,7 +96,7 @@ public SharedPlugin __pl_VIPS_Core =
 
 
 #if !defined REQUIRE_PLUGIN
-public void __ext_fys_VIPS_SetNTVOptional()
+public void __pl_fys_VIPS_SetNTVOptional()
 {
     MarkNativeAsOptional("VIPS_GetClientVIP");
     MarkNativeAsOptional("VIPS_GetAuthIdVIP");

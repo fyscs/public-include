@@ -29,7 +29,7 @@ public SharedPlugin __pl_fys_Menu =
 };
 
 #if !defined REQUIRE_PLUGIN
-public void __ext_fys_Menu_SetNTVOptional()
+public void __pl_fys_Menu_SetNTVOptional()
 {
     MarkNativeAsOptional("Menu_GetAdminMenu");
     MarkNativeAsOptional("Menu_GetUsersMenu");

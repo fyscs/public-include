@@ -18,7 +18,7 @@ public SharedPlugin __pl_fys_Exts_AntiCheat =
 };
 
 #if !defined REQUIRE_PLUGIN
-public void __ext_fys_Exts_AntiCheat_SetNTVOptional()
+public void __pl_fys_Exts_AntiCheat_SetNTVOptional()
 {
     MarkNativeAsOptional("Exts_AC_SetIgnoreClient");
 }

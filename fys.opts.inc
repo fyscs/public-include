@@ -31,7 +31,7 @@ public SharedPlugin __pl_fys_Opts =
 };
 
 #if !defined REQUIRE_PLUGIN
-public void __ext_fys_Opts_SetNTVOptional()
+public void __pl_fys_Opts_SetNTVOptional()
 {
     MarkNativeAsOptional("Opts_IsClientLoaded");
 

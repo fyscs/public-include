@@ -21,7 +21,7 @@ public SharedPlugin __pl_fys_Updater =
 };
 
 #if !defined REQUIRE_PLUGIN
-public void __ext_fys_Updater_SetNTVOptional()
+public void __pl_fys_Updater_SetNTVOptional()
 {
     MarkNativeAsOptional("Pupd_CheckPlugin");
 }

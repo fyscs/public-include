@@ -18,7 +18,7 @@ public SharedPlugin __pl_fys_Exts_PerfectWorld =
 };
 
 #if !defined REQUIRE_PLUGIN
-public void __ext_fys_Exts_PerfectWorld_SetNTVOptional()
+public void __pl_fys_Exts_PerfectWorld_SetNTVOptional()
 {
     MarkNativeAsOptional("Exts_PW_IsPerfectWorld");
 }

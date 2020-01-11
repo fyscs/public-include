@@ -53,7 +53,7 @@ public SharedPlugin __pl_fys_Couples =
 };
 
 #if !defined REQUIRE_PLUGIN
-public void __ext_fys_Couples_SetNTVOptional()
+public void __pl_fys_Couples_SetNTVOptional()
 {
     MarkNativeAsOptional("CP_GetPartner");
 

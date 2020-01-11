@@ -4,12 +4,11 @@
 
 #define _fys_Exts_GroupManager_Include_
 
-#define MAX_GROUPS 4
+#define MAX_GROUPS 3
 
 #define GROUP_FyS 0
-#define GROUP_FyC 1
-#define GRPUP_PEL 2
-#define GROUP_AES 3
+#define GRPUP_PEL 1
+#define GROUP_AES 2
 
 native bool Exts_GM_IsClientMember (int client, int group);
 native bool Exts_GM_IsClientOfficer(int client, int group);
@@ -30,7 +29,7 @@ public SharedPlugin __pl_fys_Exts_GroupManager =
 };
 
 #if !defined REQUIRE_PLUGIN
-public void __ext_fys_Exts_GroupManager_SetNTVOptional()
+public void __pl_fys_Exts_GroupManager_SetNTVOptional()
 {
     MarkNativeAsOptional("Exts_GM_IsClientMember");
     MarkNativeAsOptional("Exts_GM_IsClientOfficer");

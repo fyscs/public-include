@@ -4,7 +4,7 @@
 
 #define _fys_Core_Include_
 
-#define PI_VERSION "1.3.2" ... "." ... "<build>"
+#define PI_VERSION "1.4.0" ... "." ... "<build>"
 
 #define foreachAction(%1, %2, %3) for (int %1 = %2; %1 <= %3; %1++)
 #define foreachClient(%1) for (int %1 = 1; %1 <= MaxClients; %1++) if (IsClientInGame(%1))
@@ -46,6 +46,10 @@ methodmap Player __nullable__
     }
 
     property int OnlineToday {
+        public native get();
+    }
+
+    property int PlayedToday {
         public native get();
     }
 
@@ -106,7 +110,7 @@ public SharedPlugin __pl_fys_Core =
 };
 
 #if !defined REQUIRE_PLUGIN
-public void __ext_fys_Core_SetNTVOptional()
+public void __pl_fys_Core_SetNTVOptional()
 {
     MarkNativeAsOptional("Core_GetServerId");
     MarkNativeAsOptional("Core_GetSrvModId");
@@ -123,6 +127,7 @@ public void __ext_fys_Core_SetNTVOptional()
     MarkNativeAsOptional("Player.Connections.get");
     MarkNativeAsOptional("Player.Onlines.get");
     MarkNativeAsOptional("Player.OnlineToday.get");
+    MarkNativeAsOptional("Player.PlayedToday.get");
     MarkNativeAsOptional("Player.SignTimes.get");
     MarkNativeAsOptional("Player.SignDate.get");
     MarkNativeAsOptional("Player.SignKeep.get");

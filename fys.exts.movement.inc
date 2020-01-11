@@ -41,7 +41,7 @@ public SharedPlugin __pl_fys_Exts_Movement =
 };
 
 #if !defined REQUIRE_PLUGIN
-public void __ext_fys_Exts_Movement_SetNTVOptional()
+public void __pl_fys_Exts_Movement_SetNTVOptional()
 {
     MarkNativeAsOptional("Exts_MM_SetSpeed");
     MarkNativeAsOptional("Exts_MM_SetXJump");
