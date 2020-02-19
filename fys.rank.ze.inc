@@ -116,7 +116,7 @@ public SharedPlugin __pl_fys_Rank_ZE =
 #if !defined REQUIRE_PLUGIN
 public void __pl_fys_Bans_SetNTVOptional()
 {
-	MarkNativeAsOptional("Rank_ZE_GetStatus");
+    MarkNativeAsOptional("Rank_ZE_GetStatus");
     MarkNativeAsOptional("Rank_ZE_SetStatus");
 
     MarkNativeAsOptional("Rank_ZE_Get_Points");
