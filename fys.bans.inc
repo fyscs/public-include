@@ -4,6 +4,7 @@
 
 #define _fys_Bans_Include_
 
+native bool Admin_IsInAdminSys(int client);
 native bool Admin_IsAuthAdmin(const char[] auth);
 native bool Admin_IsClientAdmin(int client);
 native int  Admin_GetAdminId(int client);
@@ -35,6 +36,7 @@ public SharedPlugin __pl_fys_Bans =
 #if !defined REQUIRE_PLUGIN
 public void __pl_fys_Bans_SetNTVOptional()
 {
+	MarkNativeAsOptional("Admin_IsInAdminSys");
 	MarkNativeAsOptional("Admin_IsAuthAdmin");
 	MarkNativeAsOptional("Admin_IsClientAdmin");
 	MarkNativeAsOptional("Admin_GetAdminId");

@@ -4,7 +4,7 @@
 
 #define _fys_Core_Include_
 
-#define PI_VERSION "1.4.0" ... "." ... "<build>"
+#define PI_VERSION "1.5" ... "." ... "<build>"
 
 #define foreachAction(%1, %2, %3) for (int %1 = %2; %1 <= %3; %1++)
 #define foreachClient(%1) for (int %1 = 1; %1 <= MaxClients; %1++) if (IsClientInGame(%1))
