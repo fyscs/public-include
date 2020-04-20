@@ -4,6 +4,7 @@
 
 #define _fsy_Menu_Include_
 
+// 获取菜单接口
 native TopMenu Menu_GetAdminMenu();
 native TopMenu Menu_GetUsersMenu();
 

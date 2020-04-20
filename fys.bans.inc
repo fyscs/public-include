@@ -4,13 +4,18 @@
 
 #define _fys_Bans_Include_
 
+// 检查是不是在权限系统
 native bool Admin_IsInAdminSys(int client);
+// 检查此steamid在本服是否有权限
 native bool Admin_IsAuthAdmin(const char[] auth);
+// 检查此人是否是OP
 native bool Admin_IsClientAdmin(int client);
+// Admin库对应的Id
 native int  Admin_GetAdminId(int client);
+// Admin库对应的名字
 native void Admin_GetAdminName(int client, char[] buffer, int maxLen);
+// 纪录管理员操作
 native void Admin_LogAction(int admin, const char[] action, const char[] message, any ...);
-
 
 /*
  *  Ban_Type

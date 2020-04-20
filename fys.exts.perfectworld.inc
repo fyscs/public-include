@@ -4,6 +4,7 @@
 
 #define _fys_Exts_PerfectWorld_Include_
 
+// 是否是国服登录
 native bool Exts_PW_IsPerfectWorld(int client);
 
 public SharedPlugin __pl_fys_Exts_PerfectWorld =

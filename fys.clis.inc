@@ -4,12 +4,18 @@
 
 #define _fys_Client_Include_
 
+// 登录器最后心跳时间
 native int  Clis_GetLastActive(int client);
+// 登录器启动时间
 native int  Clis_GetStartTime(int client);
 
+// 登录器侦测判断
 native bool Clis_IsUsingClient(int client);
+// 是否启用彩蛋
 native bool Clis_IsClientEggOn(int client);
+// 读取当前使用的版本
 native bool Clis_GetVersion(int client, char[] buffer, int maxlen);
+// 获取设备Id
 native bool Clis_GetDeviceId(int client, char[] buffer, int maxlen);
 
 public SharedPlugin __pl_fys_Client =

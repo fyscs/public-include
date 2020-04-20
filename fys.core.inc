@@ -82,15 +82,27 @@ methodmap Player __nullable__
             return this.client > 0 && this.client <= MaxClients && IsClientInGame(this.client) && !IsFakeClient(this.client);
         }
     }
+
+    property bool IsLoaded { 
+        public native get();
+    }
 }
 
+// 读取服务器ServerId
 native int  Core_GetServerId();
+// 读取服务器ModId
 native int  Core_GetSrvModId();
+// 读取服务器模式名称
 native void Core_GameModName(char[] buffer, int maxLen);
+// 读取服务器缩写
 native void Core_GameTagName(char[] buffer, int maxLen);
 
+// 推送错误消息
 native void Core_PushError(bool push, const char[] module, const char[] func, const char[] format, any ...);
+// 推送日志
 native void Core_PushLog(bool push, const char[] module, const char[] func, const char[] format, any ...);
+
+// 通过PlayerId查玩家实例
 native Player Core_FindByPId(int pid);
 
 forward void Core_OnServerLoad(int sid, int mod);

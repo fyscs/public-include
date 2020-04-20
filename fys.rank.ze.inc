@@ -4,28 +4,43 @@
 
 #define _fys_Rank_ZE_Include_
 
+// 设置/读取统计状态
 native bool Rank_ZE_GetStatus();
 native void Rank_ZE_SetStatus(bool status);
 
+// 读取排名
 native int  Rank_ZE_GetRank(int client);
 
+// 读取/获得/失去 云点
 native int  Rank_ZE_Get_Points(int client);
 native void Rank_ZE_EernPoints(int client, int point);
 native void Rank_ZE_LostPoints(int client, int point);
 
+// 击杀僵尸
 native int  Rank_ZE_Get_KillZ(int client);
+// 感染人类
 native int  Rank_ZE_Get_KillH(int client);
+// 伤害总计
 native int  Rank_ZE_Get_DmgTP(int client);
+// 通关伤害
 native int  Rank_ZE_Get_DmgRW(int client);
+// 回合总计
 native int  Rank_ZE_Get_RPlay(int client);
+// 通关回合
 native int  Rank_ZE_Get_RWins(int client);
+// 高爆总计
 native int  Rank_ZE_Get_NNade(int client);
+// 冰冻总计
 native int  Rank_ZE_Get_NIces(int client);
+// 火瓶总计
 native int  Rank_ZE_Get_NFire(int client);
+// 屏障总计
 native int  Rank_ZE_Get_NPush(int client);
+// 黑洞总计
 native int  Rank_ZE_Get_NHole(int client);
 
 forward void Rank_ZE_OnClientLoad(int client);
+forward void Rank_ZE_OnEarnPoints(int client, int points);
 
 stock char[] StringPadLeft(int value, int len = 0, const char[] padleft = "  ")
 {

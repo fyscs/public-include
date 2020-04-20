@@ -4,6 +4,7 @@
 
 #define _fys_Updater_Include_
 
+// 强制触发检查
 native bool Pupd_CheckPlugin(bool reload, const char[] url);
 
 forward void Pupd_OnCheckAllPlugins();

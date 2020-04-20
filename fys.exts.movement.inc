@@ -4,10 +4,12 @@
 
 #define _fys_Exts_Movement_Include_
 
+
 // 设置玩家速度Buff
 // speed    -> 1.1为提速10%
 // lifetime -> 持续时间, 每次player_spawn重置
 // override -> 强制覆盖设置, 如果不为true但是lifetime没到时间, 会设置失败
+#pragma deprecated This func broken by csgo update, waiting for bug fix.
 native bool Exts_MM_SetSpeed(int client, float speed = 1.0, float lifetime = 10.0, bool override = false);
 
 // 设置玩家跳跃Buff

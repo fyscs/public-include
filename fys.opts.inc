@@ -7,13 +7,16 @@
 forward void Opts_OnClientLoad(int client);
 forward void Opts_OnClientXSet(int client, const char[] key);
 
+// 是否已读取
 native bool  Opts_IsClientLoaded(int client);
 
+// 读取4种类型的设置
 native void  Opts_GetOptString(int client, const char[] key, char[] val, int maxLen, const char[] defVal = "null");
 native int   Opts_GetOptInteger(int client, const char[] key, const int defVal = 0);
 native bool  Opts_GetOptBool(int client, const char[] key, const bool defVal = false);
 native float Opts_GetOptFloat(int client, const char[] key, const float defVal = 0.0);
 
+// 设置4种类型的设置
 native void Opts_SetOptString(int client, const char[] key, const char[] val);
 native void Opts_SetOptInteger(int client, const char[] key, const int val);
 native void Opts_SetOptBool(int client, const char[] key, const bool val);

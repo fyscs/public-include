@@ -4,16 +4,19 @@
 
 #define _fys_Exts_GroupManager_Include_
 
-#define MAX_GROUPS 3
+#define MAX_GROUPS 4
 
 #define GROUP_FyS 0
-#define GRPUP_PEL 1
+#define GROUP_PEL 1
 #define GROUP_AES 2
+#define GROUP_Hyn 3
 
+// 是否在组内 / 成员 / 官员 / 组内
 native bool Exts_GM_IsClientMember (int client, int group);
 native bool Exts_GM_IsClientOfficer(int client, int group);
 native bool Exts_GM_IsClientInGroup(int client, int group);
 
+// 取组名, 组缩写
 native void Exts_GM_GetGroupFullName (int group, char[] buffer, int maxLen);
 native void Exts_GM_GetGroupShortName(int group, char[] buffer, int maxLen);
 

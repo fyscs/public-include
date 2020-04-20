@@ -16,6 +16,7 @@ enum vips_t
     vip_Permanently
 }
 
+// 取VIP类型?
 native vips_t VIPS_GetClientVIP(int client);
 native vips_t VIPS_GetAuthIdVIP(const char[] AuthId);
 
