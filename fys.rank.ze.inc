@@ -10,6 +10,8 @@ native void Rank_ZE_SetStatus(bool status);
 
 // 读取排名
 native int  Rank_ZE_GetRank(int client);
+// 读取排名记录数
+native int  Rank_ZE_GetRanAll();
 
 // 读取/获得/失去 云点
 native int  Rank_ZE_Get_Points(int client);

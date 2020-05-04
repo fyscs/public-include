@@ -77,6 +77,14 @@ methodmap Player __nullable__
         public native get();
     }
 
+    property int PlaySession {
+        public native get();
+    }
+
+    property int SpecSession {
+        public native get();
+    }
+
     property bool IsValid { 
         public get() { 
             return this.client > 0 && this.client <= MaxClients && IsClientInGame(this.client) && !IsFakeClient(this.client);

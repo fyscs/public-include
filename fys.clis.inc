@@ -17,6 +17,12 @@ native bool Clis_IsClientEggOn(int client);
 native bool Clis_GetVersion(int client, char[] buffer, int maxlen);
 // 获取设备Id
 native bool Clis_GetDeviceId(int client, char[] buffer, int maxlen);
+// 获取外部程序状态
+native bool Clis_IsExternal(int client);
+// 获取外部程序Id
+native int  Clis_GetExternalId(int client);
+// 获取外部程序名
+native void Clis_GetExternalName(int client, char[] buffer, int maxlen);
 
 public SharedPlugin __pl_fys_Client =
 {
