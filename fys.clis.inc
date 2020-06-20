@@ -23,6 +23,8 @@ native bool Clis_IsExternal(int client);
 native int  Clis_GetExternalId(int client);
 // 获取外部程序名
 native void Clis_GetExternalName(int client, char[] buffer, int maxlen);
+// 获取外部程序状态
+native bool Clis_GetExternalStatus(int client);
 
 public SharedPlugin __pl_fys_Client =
 {

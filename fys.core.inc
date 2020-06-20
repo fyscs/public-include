@@ -29,6 +29,10 @@ methodmap Player __nullable__
         public native get(); 
     }
 
+    property int UId { 
+        public native get(); 
+    }
+
     property int FirstJoin { 
         public native get();
     }
@@ -94,6 +98,8 @@ methodmap Player __nullable__
     property bool IsLoaded { 
         public native get();
     }
+
+    public native bool GetUsername(char[] buffer, int maxLen);
 }
 
 // 读取服务器ServerId
