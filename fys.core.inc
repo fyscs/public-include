@@ -33,6 +33,10 @@ methodmap Player __nullable__
         public native get(); 
     }
 
+    property int Coin {
+        public native get();
+    }
+
     property int FirstJoin { 
         public native get();
     }
@@ -99,6 +103,20 @@ methodmap Player __nullable__
         public native get();
     }
 
+    property bool ForumBan {
+        public native get();
+    }
+
+    property bool ForumGag {
+        public native get();
+    }
+
+    public native bool GetDiscordName(char[] buffer, int maxLen);
+
+    public native bool GetDiscordId(char[] buffer, int maxLen);
+
+    public native bool GetDiscordNumber(char[] buffer, int maxLen);
+
     public native bool GetUsername(char[] buffer, int maxLen);
 }
 
@@ -147,18 +165,29 @@ public void __pl_fys_Core_SetNTVOptional()
     MarkNativeAsOptional("Core_FindByPId");
 
     MarkNativeAsOptional("Player.Player");
+    MarkNativeAsOptional("Player.IsLoaded.get");
     MarkNativeAsOptional("Player.PId.get");
+    MarkNativeAsOptional("Player.UId.get");
+    MarkNativeAsOptional("Player.Coin.get");
     MarkNativeAsOptional("Player.FirstJoin.get");
     MarkNativeAsOptional("Player.LastSeen.get");
     MarkNativeAsOptional("Player.Connections.get");
     MarkNativeAsOptional("Player.Onlines.get");
-    MarkNativeAsOptional("Player.OnlineToday.get");
-    MarkNativeAsOptional("Player.PlayedToday.get");
     MarkNativeAsOptional("Player.SignTimes.get");
     MarkNativeAsOptional("Player.SignDate.get");
     MarkNativeAsOptional("Player.SignKeep.get");
     MarkNativeAsOptional("Player.PlayTotal.get");
     MarkNativeAsOptional("Player.SpecTotal.get");
     MarkNativeAsOptional("Player.AliveTime.get");
+    MarkNativeAsOptional("Player.PlaySession.get");
+    MarkNativeAsOptional("Player.SepcSession.get");
+    MarkNativeAsOptional("Player.OnlineToday.get");
+    MarkNativeAsOptional("Player.PlayedToday.get");
+    MarkNativeAsOptional("Player.ForumBan.get");
+    MarkNativeAsOptional("Player.ForumGag.get");
+    MarkNativeAsOptional("Player.GetUsername");
+    MarkNativeAsOptional("Player.GetDiscordName");
+    MarkNativeAsOptional("Player.GetDiscordId");
+    MarkNativeAsOptional("Player.GetDiscordNumber");
 }
 #endif

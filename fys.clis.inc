@@ -25,6 +25,8 @@ native int  Clis_GetExternalId(int client);
 native void Clis_GetExternalName(int client, char[] buffer, int maxlen);
 // 获取外部程序状态
 native bool Clis_GetExternalStatus(int client);
+// 获取Discord状态
+native bool Clis_IsDiscordOnline(int client);
 
 public SharedPlugin __pl_fys_Client =
 {

@@ -6,6 +6,10 @@
 
 // 获取认证
 native int  Auth_GetClientAuth(int client);
+// 获取等级
+native int  Auth_GetClientLvls(int client);
+// 增加经验
+native void Auth_AddClientExps(int client);
 // 认证名称
 native void Auth_GetClientName(int client, const char[] auth, int maxLen);
 
