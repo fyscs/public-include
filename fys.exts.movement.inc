@@ -5,13 +5,6 @@
 #define _fys_Exts_Movement_Include_
 
 
-// 设置玩家速度Buff
-// speed    -> 1.1为提速10%
-// lifetime -> 持续时间, 每次player_spawn重置
-// override -> 强制覆盖设置, 如果不为true但是lifetime没到时间, 会设置失败
-#pragma deprecated This func broken by csgo update, waiting for bug fix.
-native bool Exts_MM_SetSpeed(int client, float speed = 1.0, float lifetime = 10.0, bool override = false);
-
 // 设置玩家跳跃Buff
 // height   -> 1.1为增加高度10%
 // length   -> 1.1为增加距离10%
@@ -31,6 +24,19 @@ native float Exts_MM_GetDistance(int client, int target, bool forceUpdate = fals
 // 本方法不执行穿墙, 若需要执行穿墙请使用SM native [int GetClientAimTarget(int client, bool only_clients)]
 native int Exts_MM_GetAimTarget(int client, bool forceFilterClient = false);
 
+// 获取玩家是否处于蹲下状态
+native bool Exts_MM_IsDucking(int client);
+
+// 检测玩家是否卡住
+native bool Exts_MM_IsStuck(int client);
+
+// 获取玩家离地面或脚底实体的距离
+// 如果失败则返回值 < -1.0
+native float Exts_MM_GetGroundDistance(int client);
+
+// 获取玩家脚底地面/实体的坐标
+native bool Exts_MM_GetVerticalGroudPos(int client, float fPos[3]);
+
 public SharedPlugin __pl_fys_Exts_Movement =
 {
     name = "fys-Exts-Movement",
@@ -45,10 +51,13 @@ public SharedPlugin __pl_fys_Exts_Movement =
 #if !defined REQUIRE_PLUGIN
 public void __pl_fys_Exts_Movement_SetNTVOptional()
 {
-    MarkNativeAsOptional("Exts_MM_SetSpeed");
     MarkNativeAsOptional("Exts_MM_SetXJump");
     MarkNativeAsOptional("Exts_MM_GetSpeed");
     MarkNativeAsOptional("Exts_MM_GetDistance");
     MarkNativeAsOptional("Exts_MM_GetAimTarget");
+    MarkNativeAsOptional("Exts_MM_IsDucking");
+    MarkNativeAsOptional("Exts_MM_IsStuck");
+    MarkNativeAsOptional("Exts_MM_GetGroundDistance");
+    MarkNativeAsOptional("Exts_MM_GetVerticalGroudPos");
 }
 #endif

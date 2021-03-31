@@ -65,7 +65,7 @@ stock char[] VIPTimeToString(int time)
     char buffer[64];
 
     if (time == TIME_PERMANENT)
-        buffer = "2099-12-31";
+        buffer = "有生之年";
     else
         FormatTime(buffer, 64, "%Y-%m-%d", time);
 

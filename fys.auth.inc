@@ -31,5 +31,7 @@ public void __pl_fys_Auth_SetNTVOptional()
 {
     MarkNativeAsOptional("Auth_GetClientAuth");
     MarkNativeAsOptional("Auth_GetClientName");
+    MarkNativeAsOptional("Auth_GetClientLvls");
+    MarkNativeAsOptional("Auth_AddClientExps");
 }
 #endif

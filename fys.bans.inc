@@ -4,16 +4,29 @@
 
 #define _fys_Bans_Include_
 
+enum AdminLevel
+{
+	AdminLevel_Disabled = 0,
+	AdminLevel_Junior,
+	AdminLevel_Senior,
+	AdminLevel_Superior,
+	AdminLevel_Admin,
+	AdminLevel_Root,
+	AdminLevel_Owner
+}
+
 // 检查是不是在权限系统
-native bool Admin_IsInAdminSys(int client);
+native bool Admin_IsInAdminSys(int admin);
 // 检查此steamid在本服是否有权限
 native bool Admin_IsAuthAdmin(const char[] auth);
 // 检查此人是否是OP
-native bool Admin_IsClientAdmin(int client);
+native bool Admin_IsClientAdmin(int admin);
 // Admin库对应的Id
-native int  Admin_GetAdminId(int client);
+native int  Admin_GetAdminId(int admin);
+// Admin库对应的Level
+native AdminLevel Admin_GetAdminLevel(int admin);
 // Admin库对应的名字
-native void Admin_GetAdminName(int client, char[] buffer, int maxLen);
+native void Admin_GetAdminName(int admin, char[] buffer, int maxLen);
 // 纪录管理员操作
 native void Admin_LogAction(int admin, const char[] action, const char[] message, any ...);
 
@@ -47,6 +60,7 @@ public void __pl_fys_Bans_SetNTVOptional()
 	MarkNativeAsOptional("Admin_GetAdminId");
 	MarkNativeAsOptional("Admin_GetAdminName");
 	MarkNativeAsOptional("Admin_LogAction");
+	MarkNativeAsOptional("Admin_GetAdminLevel");
 
 	MarkNativeAsOptional("Bans_BanClient");
 	MarkNativeAsOptional("Bans_BanIdentity");

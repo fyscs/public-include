@@ -8,10 +8,16 @@
 native bool Rank_ZE_GetStatus();
 native void Rank_ZE_SetStatus(bool status);
 
+// 读取地图等级
+native int  Rank_ZE_GetMapTier();
+
 // 读取排名
 native int  Rank_ZE_GetRank(int client);
 // 读取排名记录数
 native int  Rank_ZE_GetRanAll();
+
+// 读取等级
+native int  Rank_ZE_Get_LevelR(int client);
 
 // 读取/获得/失去 云点
 native int  Rank_ZE_Get_Points(int client);
@@ -40,6 +46,8 @@ native int  Rank_ZE_Get_NFire(int client);
 native int  Rank_ZE_Get_NPush(int client);
 // 黑洞总计
 native int  Rank_ZE_Get_NHole(int client);
+// 游玩总计
+native int  Rank_ZE_Get_TPlay(int client);
 
 forward void Rank_ZE_OnClientLoad(int client);
 forward void Rank_ZE_OnEarnPoints(int client, int points);
@@ -136,7 +144,13 @@ public void __pl_fys_Rank_ZE_SetNTVOptional()
     MarkNativeAsOptional("Rank_ZE_GetStatus");
     MarkNativeAsOptional("Rank_ZE_SetStatus");
 
+    MarkNativeAsOptional("Rank_ZE_GetRank");
+    MarkNativeAsOptional("Rank_ZE_GetRanAll");
+
+    MarkNativeAsOptional("Rank_ZE_GetMapTier");
+
     MarkNativeAsOptional("Rank_ZE_Get_Points");
+    MarkNativeAsOptional("Rank_ZE_Get_LevelR");
     MarkNativeAsOptional("Rank_ZE_EernPoints");
     MarkNativeAsOptional("Rank_ZE_LostPoints");
 
@@ -151,5 +165,7 @@ public void __pl_fys_Rank_ZE_SetNTVOptional()
     MarkNativeAsOptional("Rank_ZE_Get_NFire");
     MarkNativeAsOptional("Rank_ZE_Get_NPush");
     MarkNativeAsOptional("Rank_ZE_Get_NHole");
+
+    MarkNativeAsOptional("Rank_ZE_Get_TPlay");
 }
 #endif

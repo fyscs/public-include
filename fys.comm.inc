@@ -34,7 +34,7 @@ public SharedPlugin __pl_fys_Comm =
 #if !defined REQUIRE_PLUGIN
 public void __pl_fys_Comm_SetNTVOptional()
 {
-	MarkNativeAsOptional("Comm_IsClientGagged");
+    MarkNativeAsOptional("Comm_IsClientGagged");
     MarkNativeAsOptional("BaseComm_IsClientGagged");
 
     MarkNativeAsOptional("Comm_IsClientMuted");

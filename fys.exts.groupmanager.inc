@@ -45,5 +45,7 @@ public void __pl_fys_Exts_GroupManager_SetNTVOptional()
 
     MarkNativeAsOptional("Exts_GM_GetGroupFullName");
     MarkNativeAsOptional("Exts_GM_GetGroupShortName");
+
+    MarkNativeAsOptional("Exts_GM_InBadGroup");
 }
 #endif

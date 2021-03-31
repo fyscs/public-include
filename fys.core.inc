@@ -95,7 +95,7 @@ methodmap Player __nullable__
 
     property bool IsValid { 
         public get() { 
-            return this.client > 0 && this.client <= MaxClients && IsClientInGame(this.client) && !IsFakeClient(this.client);
+            return this.client > 0 && this.client <= MaxClients && IsClientInGame(this.client) && !IsFakeClient(this.client) && IsClientAuthorized(this.client);
         }
     }
 
@@ -118,6 +118,8 @@ methodmap Player __nullable__
     public native bool GetDiscordNumber(char[] buffer, int maxLen);
 
     public native bool GetUsername(char[] buffer, int maxLen);
+
+    public native bool GetTicket(char[] buffer, int maxLen);
 }
 
 // 读取服务器ServerId
@@ -129,6 +131,10 @@ native void Core_GameModName(char[] buffer, int maxLen);
 // 读取服务器缩写
 native void Core_GameTagName(char[] buffer, int maxLen);
 
+// 投票
+native bool Core_GetInternalVote();
+native void Core_SetInternalVote(bool state);
+
 // 推送错误消息
 native void Core_PushError(bool push, const char[] module, const char[] func, const char[] format, any ...);
 // 推送日志
@@ -136,6 +142,9 @@ native void Core_PushLog(bool push, const char[] module, const char[] func, cons
 
 // 通过PlayerId查玩家实例
 native Player Core_FindByPId(int pid);
+
+// 获取PId(忽略安全验证)
+native int  Core_GetUnsafePId(int client);
 
 forward void Core_OnServerLoad(int sid, int mod);
 forward void Core_OnClientSign(Player player);
@@ -163,6 +172,7 @@ public void __pl_fys_Core_SetNTVOptional()
     MarkNativeAsOptional("Core_PushError");
     MarkNativeAsOptional("Core_PushLog");
     MarkNativeAsOptional("Core_FindByPId");
+    MarkNativeAsOptional("Core_GetUnsafePId");
 
     MarkNativeAsOptional("Player.Player");
     MarkNativeAsOptional("Player.IsLoaded.get");
@@ -180,7 +190,7 @@ public void __pl_fys_Core_SetNTVOptional()
     MarkNativeAsOptional("Player.SpecTotal.get");
     MarkNativeAsOptional("Player.AliveTime.get");
     MarkNativeAsOptional("Player.PlaySession.get");
-    MarkNativeAsOptional("Player.SepcSession.get");
+    MarkNativeAsOptional("Player.SpecSession.get");
     MarkNativeAsOptional("Player.OnlineToday.get");
     MarkNativeAsOptional("Player.PlayedToday.get");
     MarkNativeAsOptional("Player.ForumBan.get");
@@ -189,5 +199,9 @@ public void __pl_fys_Core_SetNTVOptional()
     MarkNativeAsOptional("Player.GetDiscordName");
     MarkNativeAsOptional("Player.GetDiscordId");
     MarkNativeAsOptional("Player.GetDiscordNumber");
+    MarkNativeAsOptional("Player.GetTicket");
+
+    MarkNativeAsOptional("Core_GetInternalVote");
+    MarkNativeAsOptional("Core_SetInternalVote");
 }
 #endif
