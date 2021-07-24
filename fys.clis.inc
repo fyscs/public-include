@@ -25,6 +25,8 @@ native int  Clis_GetExternalId(int client);
 native void Clis_GetExternalName(int client, char[] buffer, int maxlen);
 // 获取外部程序状态
 native bool Clis_GetExternalStatus(int client);
+// 获取外部SP
+native bool Clis_HasSoundPad(int client);
 // 获取Discord状态
 native bool Clis_IsDiscordOnline(int client);
 // 获取Sponsor状态
@@ -51,6 +53,7 @@ public void __pl_fys_Client_SetNTVOptional()
     MarkNativeAsOptional("Clis_GetVersion");
     MarkNativeAsOptional("Clis_GetDeviceId");
     MarkNativeAsOptional("Clis_IsExternal");
+    MarkNativeAsOptional("Clis_HasSoundPad");
     MarkNativeAsOptional("Clis_GetExternalId");
     MarkNativeAsOptional("Clis_GetExternalName");
     MarkNativeAsOptional("Clis_GetExternalStatus");

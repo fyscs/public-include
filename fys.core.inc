@@ -103,6 +103,11 @@ methodmap Player __nullable__
         public native get();
     }
 
+    property bool AFK {
+        public native get();
+        public native set(bool value);
+    }
+
     property bool ForumBan {
         public native get();
     }
@@ -176,6 +181,8 @@ public void __pl_fys_Core_SetNTVOptional()
 
     MarkNativeAsOptional("Player.Player");
     MarkNativeAsOptional("Player.IsLoaded.get");
+    MarkNativeAsOptional("Player.AFK.get");
+    MarkNativeAsOptional("Player.AFK.set");
     MarkNativeAsOptional("Player.PId.get");
     MarkNativeAsOptional("Player.UId.get");
     MarkNativeAsOptional("Player.Coin.get");

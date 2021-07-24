@@ -13,6 +13,17 @@ native bool Maps_GetUUID(const char[] map, char[] buffer, int maxLen);
 // 取地图打小
 native int  Maps_GetSize(const char[] map);
 
+
+// 当前关卡
+native int Maps_GetStage();
+// 总关卡数
+native int Maps_GetTotal();
+// Ex开始关
+native int Maps_GetExStart();
+// 是否有Ex
+native int Maps_GetExtreme();
+
+
 public SharedPlugin __pl_fys_Maps =
 {
     name = "fys-Maps",
@@ -31,5 +42,10 @@ public void __pl_fys_Maps_SetNTVOptional()
     MarkNativeAsOptional("Maps_GetHash");
     MarkNativeAsOptional("Maps_GetUUID");
     MarkNativeAsOptional("Maps_GetSize");
+
+    MarkNativeAsOptional("Maps_GetStage");
+    MarkNativeAsOptional("Maps_GetTotal");
+    MarkNativeAsOptional("Maps_GetExStart");
+    MarkNativeAsOptional("Maps_GetExtreme");
 }
 #endif

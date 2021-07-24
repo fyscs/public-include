@@ -10,6 +10,7 @@ enum
     GROUP_PEL,
     GROUP_AES,
     GROUP_Hyn,
+    GROUP_She,
     MAX_GROUPS
 }
 
@@ -17,6 +18,10 @@ enum
 native bool Exts_GM_IsClientMember (int client, int group);
 native bool Exts_GM_IsClientOfficer(int client, int group);
 native bool Exts_GM_IsClientInGroup(int client, int group);
+
+// 组标管理
+native bool Exts_GM_GetRealClanTag(int client, char[] buffer, int maxLen);
+native bool Exts_GM_SetOverrideTag(int client, const char[] buffer = NULL_STRING);
 
 // 取组名, 组缩写
 native void Exts_GM_GetGroupFullName (int group, char[] buffer, int maxLen);
