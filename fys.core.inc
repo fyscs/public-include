@@ -4,7 +4,7 @@
 
 #define _fys_Core_Include_
 
-#define PI_VERSION "1.5" ... "." ... "<build>"
+#define PI_VERSION "1.7" ... "." ... "<build>"
 
 #define foreachAction(%1, %2, %3) for (int %1 = %2; %1 <= %3; %1++)
 #define foreachClient(%1) for (int %1 = 1; %1 <= MaxClients; %1++) if (IsClientInGame(%1))
@@ -36,6 +36,11 @@ methodmap Player __nullable__
     property int Coin {
         public native get();
     }
+
+    property int XPay {
+        public native get();
+    }
+
 
     property int FirstJoin { 
         public native get();
@@ -186,6 +191,7 @@ public void __pl_fys_Core_SetNTVOptional()
     MarkNativeAsOptional("Player.PId.get");
     MarkNativeAsOptional("Player.UId.get");
     MarkNativeAsOptional("Player.Coin.get");
+    MarkNativeAsOptional("Player.XPay.get");
     MarkNativeAsOptional("Player.FirstJoin.get");
     MarkNativeAsOptional("Player.LastSeen.get");
     MarkNativeAsOptional("Player.Connections.get");

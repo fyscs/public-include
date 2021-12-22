@@ -23,8 +23,10 @@ native bool Admin_IsAuthAdmin(const char[] auth);
 native bool Admin_IsClientAdmin(int admin);
 // Admin库对应的Id
 native int  Admin_GetAdminId(int admin);
+native int  Admin_GetAdminIdEx(const char[] auth);
 // Admin库对应的Level
 native AdminLevel Admin_GetAdminLevel(int admin);
+native AdminLevel Admin_GetAdminLevelEx(const char[] auth);
 // Admin库对应的名字
 native void Admin_GetAdminName(int admin, char[] buffer, int maxLen);
 // 纪录管理员操作

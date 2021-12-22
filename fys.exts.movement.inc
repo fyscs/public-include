@@ -21,7 +21,8 @@ native float Exts_MM_GetDistance(int client, int target, bool forceUpdate = fals
 
 // 获取玩家准星瞄准的实体
 // forceFilterClient -> 强制过滤非玩家实体, 否者为Edict
-// 本方法不执行穿墙, 若需要执行穿墙请使用SM native [int GetClientAimTarget(int client, bool only_clients)]
+// 本方法不执行穿墙, 若需要执行穿墙请使用SM native
+// [int GetClientAimTarget(int client, bool only_clients)]
 native int Exts_MM_GetAimTarget(int client, bool forceFilterClient = false);
 
 // 获取玩家是否处于蹲下状态

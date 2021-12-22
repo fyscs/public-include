@@ -4,6 +4,10 @@
 
 #define _fys_Comm_Include_
 
+// 特殊禁言/禁麦
+native void Comm_SetClientGagEx(int admin, int target, int mode, int length = 1);
+native void Comm_SetClientMuteEx(int admin, int target, int mode, int length = 1);
+
 // 是否被禁言
 native bool Comm_IsClientGagged(int client);
 native bool BaseComm_IsClientGagged(int client);

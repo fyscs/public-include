@@ -6,6 +6,7 @@
 
 native bool Data_TraceBet(int client, int chip, int earn, int time = -1);
 native bool Data_TraceEntWatch(int client, const char[] action, int itemId, const char[] item);
+native bool Data_TraceVoice(int client, float duration, bool soundpad);
 native void Data_GetAuthorization(char[] header, int maxLen);
 
 public SharedPlugin __pl_fys_Data =
@@ -24,5 +25,7 @@ public void __pl_fys_Data_SetNTVOptional()
 {
     MarkNativeAsOptional("Data_TraceBet");
     MarkNativeAsOptional("Data_TraceEntWatch");
+    MarkNativeAsOptional("Data_TraceVoice");
+    MarkNativeAsOptional("Data_GetAuthorization");
 }
 #endif

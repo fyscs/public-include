@@ -31,6 +31,10 @@ native bool Clis_HasSoundPad(int client);
 native bool Clis_IsDiscordOnline(int client);
 // 获取Sponsor状态
 native bool Clis_IsDiscordBooster(int client);
+// 获取Discord客户端
+native bool Clis_HasDiscordClient(int client);
+// 获取是否启用狗屎
+native bool Clis_IsClientUseShit(int client);
 
 public SharedPlugin __pl_fys_Client =
 {
@@ -59,5 +63,7 @@ public void __pl_fys_Client_SetNTVOptional()
     MarkNativeAsOptional("Clis_GetExternalStatus");
     MarkNativeAsOptional("Clis_IsDiscordOnline");
     MarkNativeAsOptional("Clis_IsDiscordBooster");
+    MarkNativeAsOptional("Clis_HasDiscordClient");
+    MarkNativeAsOptional("Clis_IsClientUseShit");
 }
 #endif
