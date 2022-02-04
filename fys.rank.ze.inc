@@ -12,15 +12,18 @@ native void Rank_ZE_SetStatus(bool status);
 native int  Rank_ZE_GetMapTier();
 
 // 读取排名
-native int  Rank_ZE_GetRank(int client);
+native int  Rank_ZE_GetRank  (int client);
+native int  Rank_ZE_GetRankEx(int client);
 // 读取排名记录数
 native int  Rank_ZE_GetRanAll();
 
 // 读取等级
 native int  Rank_ZE_Get_LevelR(int client);
+native int  Rank_ZE_Get_LevelX(int client);
 
 // 读取/获得/失去 云点
 native int  Rank_ZE_Get_Points(int client);
+native int  Rank_ZE_Get_TPoint(int client);
 native void Rank_ZE_EernPoints(int client, int point);
 native void Rank_ZE_LostPoints(int client, int point);
 
@@ -145,12 +148,15 @@ public void __pl_fys_Rank_ZE_SetNTVOptional()
     MarkNativeAsOptional("Rank_ZE_SetStatus");
 
     MarkNativeAsOptional("Rank_ZE_GetRank");
+    MarkNativeAsOptional("Rank_ZE_GetRankEx");
     MarkNativeAsOptional("Rank_ZE_GetRanAll");
 
     MarkNativeAsOptional("Rank_ZE_GetMapTier");
 
     MarkNativeAsOptional("Rank_ZE_Get_Points");
+    MarkNativeAsOptional("Rank_ZE_Get_TPoint");
     MarkNativeAsOptional("Rank_ZE_Get_LevelR");
+    MarkNativeAsOptional("Rank_ZE_Get_LevelX");
     MarkNativeAsOptional("Rank_ZE_EernPoints");
     MarkNativeAsOptional("Rank_ZE_LostPoints");
 

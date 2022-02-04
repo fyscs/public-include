@@ -16,6 +16,9 @@ enum vips_t
     vip_Permanently
 }
 
+// 系统初始化
+native bool VIPS_IsSystemLoaded();
+
 // 取VIP类型?
 native vips_t VIPS_GetClientVIP(int client);
 native vips_t VIPS_GetAuthIdVIP(const char[] AuthId);

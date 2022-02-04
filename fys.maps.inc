@@ -10,7 +10,7 @@
 #pragma unused g_sTierString
 
 char g_sTierString[FYS_MAX_TIER+1][16] = {
-    "待定","入门","简单","普通","困难","火星","入土"
+    "娱乐","入门","简单","普通","困难","火星","入土"
 };
 
 // 取地图翻译名
@@ -32,6 +32,9 @@ native int Maps_GetTotal();
 native int Maps_GetExStart();
 // 是否有Ex
 native int Maps_GetExtreme();
+
+// 地图剩余时间
+native int Maps_GetTimeLeft();
 
 
 public SharedPlugin __pl_fys_Maps =
@@ -58,5 +61,7 @@ public void __pl_fys_Maps_SetNTVOptional()
     MarkNativeAsOptional("Maps_GetTotal");
     MarkNativeAsOptional("Maps_GetExStart");
     MarkNativeAsOptional("Maps_GetExtreme");
+
+    MarkNativeAsOptional("Maps_GetTimeLeft");
 }
 #endif

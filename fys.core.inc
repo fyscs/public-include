@@ -141,9 +141,16 @@ native void Core_GameModName(char[] buffer, int maxLen);
 // 读取服务器缩写
 native void Core_GameTagName(char[] buffer, int maxLen);
 
+// app
+native void Core_GetAppSecret(char[] buffer, int maxlen);
+
 // 投票
 native bool Core_GetInternalVote();
 native void Core_SetInternalVote(bool state);
+
+// conenction
+native bool Core_IsAsyncConnect();
+native void Core_SetAsyncConnect(bool state);
 
 // 推送错误消息
 native void Core_PushError(bool push, const char[] module, const char[] func, const char[] format, any ...);
@@ -183,6 +190,11 @@ public void __pl_fys_Core_SetNTVOptional()
     MarkNativeAsOptional("Core_PushLog");
     MarkNativeAsOptional("Core_FindByPId");
     MarkNativeAsOptional("Core_GetUnsafePId");
+    MarkNativeAsOptional("Core_GetInternalVote");
+    MarkNativeAsOptional("Core_SetInternalVote");
+    MarkNativeAsOptional("Core_IsAsyncConnect");
+    MarkNativeAsOptional("Core_SetAsyncConnect");
+    MarkNativeAsOptional("Core_GetAppSecret");
 
     MarkNativeAsOptional("Player.Player");
     MarkNativeAsOptional("Player.IsLoaded.get");

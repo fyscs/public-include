@@ -24,6 +24,8 @@ native bool Admin_IsClientAdmin(int admin);
 // Admin库对应的Id
 native int  Admin_GetAdminId(int admin);
 native int  Admin_GetAdminIdEx(const char[] auth);
+// Admin库Sp
+native int  Admin_GetAdminSpecial(int admin);
 // Admin库对应的Level
 native AdminLevel Admin_GetAdminLevel(int admin);
 native AdminLevel Admin_GetAdminLevelEx(const char[] auth);
@@ -31,6 +33,8 @@ native AdminLevel Admin_GetAdminLevelEx(const char[] auth);
 native void Admin_GetAdminName(int admin, char[] buffer, int maxLen);
 // 纪录管理员操作
 native void Admin_LogAction(int admin, const char[] action, const char[] message, any ...);
+// 系统初始化
+native bool Admin_IsSystemLoaded();
 
 /*
  *  Ban_Type

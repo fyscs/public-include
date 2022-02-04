@@ -2,7 +2,7 @@
     #endinput
 #endif
 
-#define _fsy_Menu_Include_
+#define _fys_Menu_Include_
 
 // 获取菜单接口
 native TopMenu Menu_GetAdminMenu();

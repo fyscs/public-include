@@ -2,7 +2,7 @@
     #endinput
 #endif
 
-#define _fsy_Huds_Include_
+#define _fys_Huds_Include_
 
 native bool Huds_ShowHtmlHudOne(int client, float hold = 0.0, const char[] html = NULL_STRING, bool override = false);
 native bool Huds_ShowHtmlHudAll(float hold = 0.0, const char[] html = NULL_STRING, bool override = false);
