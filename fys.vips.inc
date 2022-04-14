@@ -9,11 +9,10 @@
 
 enum vips_t
 {
-    vip_NONE,
-    vip_Monthly,
-    vip_Quarterly,
-    vip_Annually,
-    vip_Permanently
+    vip_None,
+    vip_Normal,
+    vip_Supreme,
+    vip_Diamond
 }
 
 // 系统初始化
@@ -28,24 +27,23 @@ forward void VIPS_OnClientPurchased(int client, vips_t vip);
 
 stock bool VIPS_IsClientVIP(int client)
 {
-    return VIPS_GetClientVIP(client) > vip_NONE;
+    return VIPS_GetClientVIP(client) > vip_None;
 }
 
 stock bool VIPS_IsAuthIdVIP(const char[] AuthId)
 {
-    return VIPS_GetAuthIdVIP(AuthId) > vip_NONE;
+    return VIPS_GetAuthIdVIP(AuthId) > vip_None;
 }
 
 stock int VIPImmunityLevel(vips_t vip)
 {
     switch (vip)
     {
-        case vip_NONE:        return 0;
-        case vip_Monthly:     return 15;
-        case vip_Quarterly:   return 20;
-        case vip_Annually:    return 25;
-        case vip_Permanently: return 30;
-        default: return 0;
+        case vip_None:      return 0;
+        case vip_Normal:    return 15;
+        case vip_Supreme:   return 20;
+        case vip_Diamond:   return 25;
+        default:            return 0;
     }
 }
 
@@ -54,11 +52,10 @@ stock char[] VipName(vips_t vip)
     char buffer[32];
     switch (vip)
     {
-        case vip_Monthly:     buffer =  "VIP";
-        case vip_Quarterly:   buffer = "QVIP";
-        case vip_Annually:    buffer = "AVIP";
-        case vip_Permanently: buffer = "SVIP";
-        default:              buffer = "普通会员";
+        case vip_None:      buffer =  "VIP";
+        case vip_Supreme:   buffer = "SVIP";
+        case vip_Diamond:   buffer = "DVIP";
+        default:            buffer = "普通会员";
     }
     return buffer;
 }
@@ -101,6 +98,7 @@ public SharedPlugin __pl_fys_VIPS =
 #if !defined REQUIRE_PLUGIN
 public void __pl_fys_VIPS_SetNTVOptional()
 {
+    MarkNativeAsOptional("VIPS_IsSystemLoaded");
     MarkNativeAsOptional("VIPS_GetClientVIP");
     MarkNativeAsOptional("VIPS_GetAuthIdVIP");
 }

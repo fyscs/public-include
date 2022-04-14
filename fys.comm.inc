@@ -24,6 +24,14 @@ native void BaseComm_SetClientMute(int client, bool state);
 native void Comm_SetClientGag(int admin, int target, bool state, int length = 1);
 native void Comm_SetClientMute(int admin, int target, bool state, int length = 1);
 
+// 临时flags
+#define COMM_LISTENER_MAX_CHANNEL   10
+#define COMM_LISTENER_DEFAULT_FLAGS  0
+// 0 = spam
+// 1 = cpt
+// 2 = vote
+native void Comm_SetClientFlags(int client, int channel, int flags);
+
 public SharedPlugin __pl_fys_Comm =
 {
     name = "fys-Comm",
@@ -49,5 +57,7 @@ public void __pl_fys_Comm_SetNTVOptional()
 
     MarkNativeAsOptional("Comm_SetClientGag");
     MarkNativeAsOptional("Comm_SetClientMute");
+
+    MarkNativeAsOptional("Comm_SetClientFlags");
 }
 #endif

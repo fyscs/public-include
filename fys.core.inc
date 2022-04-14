@@ -130,6 +130,8 @@ methodmap Player __nullable__
     public native bool GetUsername(char[] buffer, int maxLen);
 
     public native bool GetTicket(char[] buffer, int maxLen);
+
+    public native bool GetTag(char[] buffer, int maxLen, int &color = 0x01);
 }
 
 // 读取服务器ServerId

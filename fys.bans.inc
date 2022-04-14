@@ -17,6 +17,7 @@ enum AdminLevel
 
 // 检查是不是在权限系统
 native bool Admin_IsInAdminSys(int admin);
+native bool Admin_IsInAdminSysEx(const char[] auth);
 // 检查此steamid在本服是否有权限
 native bool Admin_IsAuthAdmin(const char[] auth);
 // 检查此人是否是OP

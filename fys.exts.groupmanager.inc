@@ -22,6 +22,7 @@ native bool Exts_GM_IsClientInGroup(int client, int group);
 // 组标管理
 native bool Exts_GM_GetRealClanTag(int client, char[] buffer, int maxLen);
 native bool Exts_GM_SetOverrideTag(int client, const char[] buffer = NULL_STRING);
+native bool Exts_GM_GetOverrideTag(int client, char[] buffer, int maxLen);
 
 // 取组名, 组缩写
 native void Exts_GM_GetGroupFullName (int group, char[] buffer, int maxLen);
@@ -29,6 +30,9 @@ native void Exts_GM_GetGroupShortName(int group, char[] buffer, int maxLen);
 
 // 违规组
 native bool Exts_GM_InBadGroup(int client);
+
+// 官方组标
+native bool Exts_GM_IsOfficialTag(int client);
 
 public SharedPlugin __pl_fys_Exts_GroupManager =
 {
